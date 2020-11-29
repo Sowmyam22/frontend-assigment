@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-function Chats({ handleChats, openChat, allUsers }) {
+function Chats({ 
+	handleChats, 
+	openChat, 
+	allUsers, 
+	setAllUsers,
+	user
+}) {
+	useEffect(() => {
+    if(openChat) {
+      let array = allUsers;
+      let index = array.indexOf(user);
+      array.splice(index, 1);
+
+      setAllUsers([...array]);
+    }
+   }, [openChat])
+
 	return (
 		<div className="fixed bottom-0 right-0 px-12">
 	  	<div 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function ProfileHeader({ 
 	menuOption, 
@@ -6,7 +6,8 @@ function ProfileHeader({
 	allUsers, 
 	setOpen, 
 	history,
-	open
+	open,
+  setAllUsers
 }) {
   const showProfile = (user) => {
     history.push({
@@ -15,6 +16,16 @@ function ProfileHeader({
       state: {user_id: user.id}
     });
   }
+
+  useEffect(() => {
+    if(open) {
+      let array = allUsers;
+      let index = array.indexOf(user);
+      array.splice(index, 1);
+
+      setAllUsers([...array]);
+    }
+   }, [open])
 
 	return (
 		<div className="flex-1 px-4 flex justify-between items-center">

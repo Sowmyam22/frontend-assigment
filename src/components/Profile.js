@@ -75,6 +75,7 @@ function Profile() {
 		      	allUsers={allUsers} 
 		      	history={history} 
 		      	open={open}
+		      	setAllUsers={setAllUsers}
 	      	/>
 		    </div>
 
@@ -90,7 +91,13 @@ function Profile() {
 		    </div>
 		  </div>
 
-		  <Chats handleChats={handleChats} allUsers={allUsers} openChat={openChat} />
+		  <Chats 
+		  	handleChats={handleChats} 
+		  	allUsers={allUsers} 
+		  	openChat={openChat} 
+		  	setAllUsers={setAllUsers}
+		  	user={user}
+	  	/>
 		</div>
 	)
 }

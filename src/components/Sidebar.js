@@ -2,7 +2,7 @@ import React from "react";
 
 function Sidebar({ handleMenuOption, optionSelected }) {
 	return (
-		<div className="flex-1 flex flex-col">
+		<div className="flex-1 flex flex-col overflow-x-hidden">
       <nav className="flex-1 px-6 space-y-1 my-56">
         <div 
         	className={`group flex items-center px-2 py-4 text-sm font-medium cursor-pointer
