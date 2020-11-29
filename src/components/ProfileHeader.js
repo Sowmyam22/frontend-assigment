@@ -8,6 +8,14 @@ function ProfileHeader({
 	history,
 	open
 }) {
+  const showProfile = (user) => {
+    history.push({
+      pathname: "/view",
+      search: `?user_id=${user.id}`,
+      state: {user_id: user.id}
+    });
+  }
+
 	return (
 		<div className="flex-1 px-4 flex justify-between items-center">
     	<div className="text-xl font-medium leading-6 text-gray-700">{menuOption}</div>
@@ -33,11 +41,14 @@ function ProfileHeader({
           		</div>
 
           		<div className="h-20 overflow-y-auto">
-          			{allUsers && allUsers.map((user, index) => {
+          			{allUsers && allUsers.map((userData, index) => {
           				return (
-          					<div className="flex justify-center border-b py-2">
-          						<img className="h-8 w-8 rounded-full" src={user.profilepicture} alt="" />
-          						<div className="ml-3 text-center text-base text-gray-700">{user && user.name}</div>
+          					<div className="flex justify-center border-b py-2 cursor-pointer" onClick={() => {
+                      showProfile(userData);
+                      window.location.reload();
+                    }}>
+          						<img className="h-8 w-8 rounded-full" src={userData.profilepicture} alt="" />
+          						<div className="ml-3 text-center text-base text-gray-700">{userData && userData.name}</div>
           					</div>
         					)
           			})}

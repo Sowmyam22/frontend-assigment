@@ -41,7 +41,7 @@ function LandingPage() {
 			      <div className="bg-white text-center overflow-y-auto" style={{height: "28rem"}}>
 			      	{users && users.map((user, index) => {
 			      		return (
-			      			<div key={index} className="flex items-center p-4 border-b mx-6 cursor-pointer"onClick={() => showProfile(user)} >
+			      			<div key={index} className="flex items-center p-4 border-b mx-6 cursor-pointer" onClick={() => showProfile(user)} >
 		      					<img className="rounded-full mr-3" width="30" src={user.profilepicture} style={{height: "30px"}} alt="" />
 			      				<h2 className="text-lg text-gray-700">{user.name}</h2>
 			      			</div>
