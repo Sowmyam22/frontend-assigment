@@ -1,6 +1,6 @@
 # frontend-assigment
 ```	
-	clonethe repository
+	clone the repository
 	yarn install
 	yarn start
 	
